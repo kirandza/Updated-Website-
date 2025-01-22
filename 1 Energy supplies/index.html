@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Supplies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5; /* Light gray background */
+            color: #003366; /* Navy blue text */
+            scroll-behavior: smooth;
+            position: relative; /* Added for positioning */
+        }
+        header {
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right, #003366, #00509e); /* Gradient background */
+        }
+        /* Particle background */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure it stays behind other content */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #cc0000;
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #020202;
+        }
+        section {
+            padding: 4rem 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            background: #ffffff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            color: #003366; /* Navy blue for headings */
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #e60000;
+            margin: 0.5rem auto;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .product-card {
+            background: #ffffff; /* White background for cards */
+            border: 1px solid #ddd; /* Light gray border */
+            border-radius: 5px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact input, .contact textarea {
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: #ffffff; /* White background for inputs */
+            color: #003366; /* Navy blue text */
+        }
+        .contact input:focus, .contact textarea:focus {
+            border-color: #e60000;
+            outline: none;
+        }
+        .contact button {
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            background: #e60000; /* Red background */
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .contact button:hover {
+            background: #cc0000; /* Darker red on hover */
+        }
+        footer {
+            background: #002244; /* Darker navy blue */
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+        .social-links {
+            margin-top: 1rem;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e60000;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none;
+            transition: background 0.3s ease;
+        }
+        .back-to-top:hover {
+            background: #cc0000;
+        }
+        .view-specs {
+            background-color: #002244; /* Button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+            text-decoration: none; /* Remove underline */
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+
+    <header>
+        <img src="logo.png" alt="Company Logo" style="display: block; margin: 0 auto; width: 200px; height: auto;">
+    </header>
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>ENERGY SUPPLIES & SERVICES L.L.C was founded in 1987 due to a foreseen need in the local and regional market for 
+            professional kitchen equipment trading. This professionalism does not only come with best practice trading and 
+            services but with industry know-how to provide the right solution as per client’s needs. We offer unparalleled 
+            international market expertise to hospitality & laundry equipment of various USA, EUROPEAN brands.
+            We are a supplier of all major brands of commercial kitchen, refrigeration, bakery, operating hypermarket/supermarket 
+            cold rooms, stainless steel custom fabrication & laundry equipment. Since our inception, we focused on quality
+             products & upscale projects.
+            Our projects divisions are fast food chains, catering companies, rigs – onshore, offshore, hospitals, hotels & 
+            complete hospitality division. We continue to strive for valued-added services while maintaining the best quality
+             products, on time with reasonable prices in the industry with specialization on TURN KEY PROJECTS.
+            ENERGY SUPPLIES & SERVICES L.L.C understands their requirement & suggesting the apt option, not just selling.
+             To be the premier branded corporations we are distinctive, highly innovative, and successful in serving our 
+             customers by giving more value, whether measured by price, performance, or quality of service.</p>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Products</h2>
+        <div class="product-card">
+            <h3>Cooking Equipment</h3>
+            <img src="cooking equipment.png" alt="Cooking Equipment" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Cooking Equipment', 'cooking equipment.png')">
+            <a href="cooking_equipment_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Ovens</h3>
+            <img src="Ovens.png" alt="Ovens" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Ovens', 'Ovens.png')">
+            <a href="ovens_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Food Processor, Cutter, Peeler & Hand Mixer</h3>
+            <img src="Food Processor.png" alt="Food Processor" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Food Processor', 'Food Processor.png')">
+            <a href="food_processor_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Chillers, Freezers & Cold Rooms</h3>
+            <img src="Chillers.png" alt="Chillers" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Chillers', 'Chillers.png')">
+            <a href="chillers_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Chillers & Chest Freezers</h3>
+            <img src="chest freezers.png" alt="Chillers & Chest Freezers" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Chest Freezers', 'chest freezers.png')">
+            <a href="chest_freezers_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Pizza Preparation Tables</h3>
+            <img src="pizza table.jpeg" alt="Pizza Preparation Tables" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Pizza Preparation Tables', 'pizza table.jpeg')">
+            <a href="pizza_preparation_tables_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Juicer & Blenders</h3>
+            <img src="blender.jpeg" alt="Juicer & Blenders" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Juicer & Blenders', 'blender.jpeg')">
+            <a href="juicer_blenders_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Coffee Machines, Grinders & Dishwashing Machines</h3>
+            <img src="coffee machine.jpeg" alt="Coffee Machines" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Coffee Machines', 'coffee machine.jpeg')">
+            <a href="coffee_machines_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Food Warmers, Chafing Dish & other Kitchen Accessories</h3>
+            <img src="Food warmers.png" alt="Food Warmers" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Food Warmers', 'Food warmers.png')">
+            <a href="food_warmers_specs.html" class="view-specs">View Specs</a>
+        </div>
+        <div class="product-card">
+            <h3>Stainless Steel Custom Fabrications</h3>
+            <img src="custom fabrication.png" alt="Custom Fabrications" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Custom Fabrications', 'custom fabrication.png')">
+            <a href="custom_fabrications_specs.html" class="view-specs">View Specs</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Installations</li>
+            <li>Energy Consulting</li>
+            <li>Delivery</li>
+            <li>Maintenance</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:estimation@energysuppliesandservice.com" style="color: #003366;">estimation@energysuppliesandservice.com</a></p>
+        <p>Phone: +971 553544627 / +971 507902282</p>
+        <p>Address: Abu Dhabi, United Arab Emirates.</p>
+        <div style="text-align: center; margin-top: 2rem;">
+            <div style="display: flex; align-items: center;">
+                <a href="https://wa.me/971553544627" target="_blank">
+                    <img src="WhatsApp.png" alt="Contact us through WhatsApp" style="width: 200px; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgb(255, 254, 254);">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Energy Supplies and Services. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Include particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 100 },
+                size: { value: 3 },
+                move: { speed: 1 },
+                line_linked: { enable: true },
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                },
+            },
+        });
+
+        // Show back-to-top button when scrolling down
+        window.onscroll = function() {
+            const button = document.getElementById('backToTop');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show modal for product details
+        function showModal(title, imgSrc) {
+            alert(`Product: ${title}\nImage: ${imgSrc}`);
+        }
+    </script>
+</body>
+</html>
