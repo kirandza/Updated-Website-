@@ -13,7 +13,7 @@
             padding: 0;
             background: #f5f5f5; /* Light gray background */
             color: #003366; /* Navy blue text */
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
             position: relative; /* Added for positioning */
         }
         header {
@@ -22,7 +22,6 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(to right, #003366, #00509e); /* Gradient background */
         }
         /* Particle background */
         #particles-js {
@@ -36,7 +35,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background: #cc0000;
+            background: #f80404; /* Dark blue background */
             padding: 0.5rem 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -46,10 +45,10 @@
             text-decoration: none;
             position: relative;
             overflow: hidden;
-            transition: color 0.3s ease;
+            transition: background 0.3s ease; /* Change transition to background */
         }
         nav a:hover {
-            color: #020202;
+            background: #070707; /* Darker blue on hover */
         }
         section {
             padding: 4rem 2rem;
@@ -166,7 +165,7 @@
             background: #cc0000;
         }
         .view-specs {
-            background-color: #002244; /* Button color */
+            background-color: #f80808; /* Button color */
             color: white;
             border: none;
             border-radius: 5px;
@@ -177,6 +176,9 @@
             text-align: center;
             text-decoration: none; /* Remove underline */
         }
+        .view-specs:hover {
+            background-color: #002244; /* Darker shade on hover */
+        }
     </style>
 </head>
 <body>
@@ -184,7 +186,7 @@
     <div id="particles-js"></div>
 
     <header>
-        <img src="logo.png" alt="Company Logo" style="display: block; margin: 0 auto; width: 200px; height: auto;">
+        <img src="logo.png" alt="Company Logo" style="display: block; margin: 0 auto; width: 250px; height: auto;"> <!-- Increased width -->
     </header>
 
     <nav>
@@ -216,52 +218,52 @@
         <div class="product-card">
             <h3>Cooking Equipment</h3>
             <img src="cooking equipment.png" alt="Cooking Equipment" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Cooking Equipment', 'cooking equipment.png')">
-            <a href="cooking_equipment_specs.html" class="view-specs">View Specs</a>
+            <a href="cooking_equipment_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Ovens</h3>
             <img src="Ovens.png" alt="Ovens" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Ovens', 'Ovens.png')">
-            <a href="ovens_specs.html" class="view-specs">View Specs</a>
+            <a href="ovens_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Food Processor, Cutter, Peeler & Hand Mixer</h3>
             <img src="Food Processor.png" alt="Food Processor" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Food Processor', 'Food Processor.png')">
-            <a href="food_processor_specs.html" class="view-specs">View Specs</a>
+            <a href="food_processor_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Chillers, Freezers & Cold Rooms</h3>
             <img src="Chillers.png" alt="Chillers" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Chillers', 'Chillers.png')">
-            <a href="chillers_specs.html" class="view-specs">View Specs</a>
+            <a href="chillers_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Chillers & Chest Freezers</h3>
             <img src="chest freezers.png" alt="Chillers & Chest Freezers" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Chest Freezers', 'chest freezers.png')">
-            <a href="chest_freezers_specs.html" class="view-specs">View Specs</a>
+            <a href="chest_freezers_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Pizza Preparation Tables</h3>
             <img src="pizza table.jpeg" alt="Pizza Preparation Tables" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Pizza Preparation Tables', 'pizza table.jpeg')">
-            <a href="pizza_preparation_tables_specs.html" class="view-specs">View Specs</a>
+            <a href="pizza_preparation_tables_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Juicer & Blenders</h3>
             <img src="blender.jpeg" alt="Juicer & Blenders" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Juicer & Blenders', 'blender.jpeg')">
-            <a href="juicer_blenders_specs.html" class="view-specs">View Specs</a>
+            <a href="juicer_blenders_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Coffee Machines, Grinders & Dishwashing Machines</h3>
             <img src="coffee machine.jpeg" alt="Coffee Machines" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Coffee Machines', 'coffee machine.jpeg')">
-            <a href="coffee_machines_specs.html" class="view-specs">View Specs</a>
+            <a href="coffee_machines_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Food Warmers, Chafing Dish & other Kitchen Accessories</h3>
             <img src="Food warmers.png" alt="Food Warmers" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Food Warmers', 'Food warmers.png')">
-            <a href="food_warmers_specs.html" class="view-specs">View Specs</a>
+            <a href="food_warmers_specs.html" class="view-specs">View more</a>
         </div>
         <div class="product-card">
             <h3>Stainless Steel Custom Fabrications</h3>
             <img src="custom fabrication.png" alt="Custom Fabrications" style="max-width: 80%; height: auto; border-radius: 10px;" onclick="showModal('Custom Fabrications', 'custom fabrication.png')">
-            <a href="custom_fabrications_specs.html" class="view-specs">View Specs</a>
+            <a href="custom_fabrications_specs.html" class="view-specs">View more</a>
         </div>
     </section>
 
@@ -333,6 +335,16 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Smooth scroll to section
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor click behavior
+                const targetId = this.getAttribute('href'); // Get the target section ID
+                const targetElement = document.querySelector(targetId); // Select the target section
+                targetElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the target section smoothly
+            });
+        });
 
         // Show modal for product details
         function showModal(title, imgSrc) {
